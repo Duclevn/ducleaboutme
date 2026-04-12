@@ -446,6 +446,7 @@ p { color: var(--text-2); line-height: 1.75; }
   line-height: 1.45;
   text-align: right;
   padding-top: 1.25rem;
+  white-space: nowrap;
 }
 
 .tl-card {
