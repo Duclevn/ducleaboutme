@@ -161,10 +161,17 @@ p { color: var(--text-2); line-height: 1.75; }
   z-index: 1;
   display: grid;
   grid-template-columns: 300px 1fr;
-  align-items: center;
-  gap: 5rem;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "photo intro"
+    "photo text";
+  gap: 0 5rem;
   padding-block: 6rem 5rem;
 }
+
+.hero-photo-wrap { grid-area: photo; }
+.hero-intro      { grid-area: intro; align-self: end; padding-bottom: 0; }
+.hero-text       { grid-area: text;  align-self: start; }
 
 /* Badge */
 .hero-badge {
@@ -722,14 +729,19 @@ p { color: var(--text-2); line-height: 1.75; }
 /* ── RESPONSIVE ───────────────────────────────── */
 @media (max-width: 800px) {
   .hero-inner {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    padding-block: 4rem 3.5rem;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "intro photo"
+      "text  text";
+    gap: 1.5rem 1.25rem;
+    padding-block: 3rem 2.5rem;
   }
-  .hero-photo-wrap { display: flex; order: -1; }
-  .photo-frame { width: 140px; height: 168px; }
+  .hero-photo-wrap { display: flex; align-items: flex-start; }
+  .photo-frame { width: 110px; height: 132px; }
   .photo-ring { display: none; }
-  .hero-text { order: 1; }
+  .hero-intro { align-self: center; }
+  .hero-text { padding-top: 0; }
 
   .tl-item {
     grid-template-columns: 52px 1fr;
