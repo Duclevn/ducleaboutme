@@ -25,11 +25,14 @@ Recommended for the first deployment:
 - Temporarily switch the `ducle.uk` DNS record to **DNS only** (not Proxied).
 - After SSL is working, you can turn the Cloudflare proxy back on.
 
-### 2. Install Nginx and Certbot on the VPS
+### 2. Install git on the VPS (if not already installed)
+
+Nginx and Certbot are already installed from the `audiobooks.ducle.uk` project.
+Only install git if it's missing:
 
 ```bash
 sudo apt update
-sudo apt install -y nginx certbot python3-certbot-nginx git
+sudo apt install -y git
 ```
 
 ### 3. Clone the repo into the web root
