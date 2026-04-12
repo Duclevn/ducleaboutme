@@ -7,6 +7,7 @@ This guide assumes:
 - `audiobooks.ducle.uk` already has its own config and should stay untouched.
 - As checked on April 12, 2026, `ducle.uk` and `audiobooks.ducle.uk` are both using Cloudflare DNS.
 - The source code is hosted at: https://github.com/Duclevn/ducleaboutme.git
+- Site files live under `/opt/` to be consistent with the `audiobooks.ducle.uk` project.
 
 ---
 
@@ -35,12 +36,12 @@ sudo apt update
 sudo apt install -y git
 ```
 
-### 3. Clone the repo into the web root
+### 3. Clone the repo
 
 ```bash
-sudo mkdir -p /var/www/ducle.uk
-sudo chown -R $USER:$USER /var/www/ducle.uk
-git clone https://github.com/Duclevn/ducleaboutme.git /var/www/ducle.uk/public
+sudo mkdir -p /opt/ducle.uk
+sudo chown -R $USER:$USER /opt/ducle.uk
+git clone https://github.com/Duclevn/ducleaboutme.git /opt/ducle.uk
 ```
 
 ### 4. Add the Nginx site config
@@ -48,7 +49,7 @@ git clone https://github.com/Duclevn/ducleaboutme.git /var/www/ducle.uk/public
 Copy the config from the repo:
 
 ```bash
-sudo cp /var/www/ducle.uk/public/deploy/nginx/ducle.uk.conf /etc/nginx/sites-available/ducle.uk
+sudo cp /opt/ducle.uk/deploy/nginx/ducle.uk.conf /etc/nginx/sites-available/ducle.uk
 sudo ln -s /etc/nginx/sites-available/ducle.uk /etc/nginx/sites-enabled/ducle.uk
 ```
 
@@ -90,8 +91,7 @@ Use `Full (strict)` SSL mode in Cloudflare if the proxy is enabled.
 After you push new changes to GitHub, SSH into the VPS and run:
 
 ```bash
-cd /var/www/ducle.uk/public
-git pull origin main
+cd /opt/ducle.uk && git pull origin main
 ```
 
 No build step is needed — this is a plain static site.
@@ -102,7 +102,7 @@ Nginx serves the files directly; there is no need to restart or reload Nginx.
 If you have SSH access set up, you can deploy in a single command from your Windows terminal:
 
 ```powershell
-ssh user@YOUR_VPS_IP "cd /var/www/ducle.uk/public && git pull origin main"
+ssh user@YOUR_VPS_IP "cd /opt/ducle.uk && git pull origin main"
 ```
 
 Replace `user` and `YOUR_VPS_IP` with your actual SSH username and VPS IP address.
