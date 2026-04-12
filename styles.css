@@ -470,6 +470,20 @@ p { color: var(--text-2); line-height: 1.75; }
   margin-bottom: 0.85rem;
 }
 
+.tl-card-header-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tl-logo {
+  width: auto;
+  height: 36px;
+  max-width: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .tl-company {
   font-size: 1.05rem;
   font-weight: 700;
