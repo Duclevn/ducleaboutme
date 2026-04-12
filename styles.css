@@ -208,6 +208,13 @@ p { color: var(--text-2); line-height: 1.75; }
   margin-bottom: 0.4rem;
 }
 
+.hero-name-vn {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
 /* Subtitle under name */
 .hero-subtitle {
   font-size: clamp(1rem, 2vw, 1.2rem);
