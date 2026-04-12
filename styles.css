@@ -217,8 +217,9 @@ p { color: var(--text-2); line-height: 1.75; }
 
 /* Subtitle under name */
 .hero-subtitle {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
   font-weight: 400;
+  font-style: italic;
   color: var(--text-2);
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -710,8 +711,10 @@ p { color: var(--text-2); line-height: 1.75; }
     gap: 3rem;
     padding-block: 4rem 3.5rem;
   }
-  .hero-photo-wrap { display: none; }
-  .hero-text { order: -1; }
+  .hero-photo-wrap { display: flex; order: -1; }
+  .photo-frame { width: 140px; height: 168px; }
+  .photo-ring { display: none; }
+  .hero-text { order: 1; }
 
   .tl-item {
     grid-template-columns: 52px 1fr;
