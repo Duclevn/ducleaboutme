@@ -56,7 +56,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 <body>
@@ -230,16 +230,10 @@
       <div class="container">
         <p class="eyebrow">Skills</p>
         <h2 class="section-heading">What I bring</h2>
-        <div class="skills-grid">
+        <div class="skills-table">
 
-          <!-- Core Competencies -->
-          <div class="skill-category skill-cat-blue">
-            <div class="skill-cat-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
-              </svg>
-            </div>
-            <h3 class="skill-cat-title">Core Competencies</h3>
+          <div class="skills-row">
+            <span class="skills-label skills-label-blue">Core</span>
             <div class="tags">
               <span class="tag">Business Analysis</span>
               <span class="tag">Requirement Management</span>
@@ -250,30 +244,18 @@
             </div>
           </div>
 
-          <!-- Technical -->
-          <div class="skill-category skill-cat-purple">
-            <div class="skill-cat-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-            <h3 class="skill-cat-title">Technical Skills</h3>
+          <div class="skills-row">
+            <span class="skills-label skills-label-purple">Technical</span>
             <div class="tags">
               <span class="tag">API Testing</span>
               <span class="tag">Software Testing</span>
               <span class="tag">QA Processes</span>
-<span class="tag">Networking (CCNA)</span>
+              <span class="tag">Networking (CCNA)</span>
             </div>
           </div>
 
-          <!-- Tools -->
-          <div class="skill-category skill-cat-teal">
-            <div class="skill-cat-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-              </svg>
-            </div>
-            <h3 class="skill-cat-title">Tools &amp; Software</h3>
+          <div class="skills-row">
+            <span class="skills-label skills-label-teal">Tools</span>
             <div class="tags">
               <span class="tag tag-mono">Postman</span>
               <span class="tag tag-mono">JIRA</span>
@@ -286,14 +268,8 @@
             </div>
           </div>
 
-          <!-- Languages -->
-          <div class="skill-category skill-cat-orange">
-            <div class="skill-cat-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </div>
-            <h3 class="skill-cat-title">Languages</h3>
+          <div class="skills-row">
+            <span class="skills-label skills-label-orange">Languages</span>
             <div class="tags">
               <span class="tag">English (Intermediate)</span>
               <span class="tag">Vietnamese (Native)</span>
