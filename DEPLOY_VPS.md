@@ -19,11 +19,12 @@ In Cloudflare DNS:
 
 - Set the `A` record for `ducle.uk` to your VPS IPv4 address.
 - If your VPS has IPv6, set the `AAAA` record for `ducle.uk` as well.
+- Set `www.ducle.uk` to the same VPS, either with a `CNAME` record pointing to `ducle.uk` or matching `A`/`AAAA` records.
 - Leave `audiobooks.ducle.uk` unchanged.
 
 Recommended for the first deployment:
 
-- Temporarily switch the `ducle.uk` DNS record to **DNS only** (not Proxied).
+- Temporarily switch the `ducle.uk` and `www.ducle.uk` DNS records to **DNS only** (not Proxied).
 - After SSL is working, you can turn the Cloudflare proxy back on.
 
 ### 2. Install git on the VPS (if not already installed)
@@ -69,7 +70,7 @@ sudo systemctl reload nginx
 ### 5. Create the SSL certificate
 
 ```bash
-sudo certbot --nginx -d ducle.uk
+sudo certbot --nginx -d ducle.uk -d www.ducle.uk
 ```
 
 Choose the redirect option when Certbot asks whether HTTP should redirect to HTTPS.
@@ -80,6 +81,9 @@ Check these URLs in the browser:
 
 - `http://ducle.uk` — should redirect to HTTPS
 - `https://ducle.uk` — should show the personal website
+- `http://www.ducle.uk` — should redirect to `https://ducle.uk`
+- `https://www.ducle.uk` — should redirect to `https://ducle.uk`
+- `https://ducle.uk/index.html` — should redirect to `https://ducle.uk/`
 
 If you turned Cloudflare proxy off earlier, switch it back on after HTTPS works correctly.
 Use `Full (strict)` SSL mode in Cloudflare if the proxy is enabled.
@@ -96,6 +100,14 @@ cd /opt/ducle.uk && git pull origin main
 
 No build step is needed — this is a plain static site.
 Nginx serves the files directly; there is no need to restart or reload Nginx.
+
+If `deploy/nginx/ducle.uk.conf` changed, also update the Nginx site config and reload Nginx:
+
+```bash
+sudo cp /opt/ducle.uk/deploy/nginx/ducle.uk.conf /etc/nginx/sites-available/ducle.uk
+sudo nginx -t
+sudo systemctl reload nginx
+```
 
 ### One-liner from your local machine (optional)
 
