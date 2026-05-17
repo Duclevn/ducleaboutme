@@ -271,13 +271,6 @@ p { color: var(--text-2); line-height: 1.75; }
   border-color: rgba(13, 148, 136, 0.22);
 }
 
-.role-tag-green {
-  color: #15803d;
-  background: rgba(21, 128, 61, 0.07);
-  border-color: rgba(21, 128, 61, 0.22);
-}
-
-
 /* Bullet highlights */
 .hero-bullets {
   list-style: none;
@@ -306,7 +299,8 @@ p { color: var(--text-2); line-height: 1.75; }
 .inline-link {
   color: var(--accent);
   font-weight: 700;
-  text-decoration: underline;
+  border-bottom: 1px solid currentColor;
+  text-decoration: none;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
