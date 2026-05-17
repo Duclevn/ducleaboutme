@@ -297,17 +297,6 @@ p { color: var(--text-2); line-height: 1.75; }
   color: var(--accent);
 }
 
-.inline-link {
-  color: var(--accent);
-  font-weight: 700;
-  border-bottom: 1px solid currentColor;
-  text-decoration: none;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-.inline-link:hover { color: #c2410c; }
-
 /* Buttons */
 .hero-actions {
   display: flex;
@@ -366,31 +355,29 @@ p { color: var(--text-2); line-height: 1.75; }
   box-shadow: 0 0 0 1px #004182, 0 8px 28px rgba(10,102,194,0.42);
 }
 
-.btn-project {
-  gap: 0.38rem;
-  padding: 0.5rem 1rem;
-  background: #fff;
-  color: #FFD700;
-  border: 1px solid rgba(26, 58, 107, 0.18);
-  box-shadow: 0 3px 12px rgba(26, 58, 107, 0.08);
+.inline-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  margin-inline: 0.08rem;
+  vertical-align: -0.22em;
 }
-.btn-project:hover {
-  background: #FFF8E7;
-  border-color: rgba(26, 58, 107, 0.28);
-  box-shadow: 0 6px 18px rgba(26, 58, 107, 0.12);
+
+.inline-project-link:hover .project-title {
+  color: #2a5a9b;
 }
 
 .project-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.7rem;
-  height: 1.25rem;
+  min-width: 1.55rem;
+  height: 1.08rem;
   border-radius: 4px;
   background: #1a3a6b;
   color: #FFD700;
   font-family: var(--display);
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.04em;
@@ -398,13 +385,9 @@ p { color: var(--text-2); line-height: 1.75; }
 
 .project-title {
   color: #1a3a6b;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 700;
   line-height: 1.1;
-}
-
-.project-open-icon {
-  color: #2a5a9b;
 }
 
 /* Meta row */
