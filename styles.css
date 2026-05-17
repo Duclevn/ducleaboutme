@@ -271,6 +271,12 @@ p { color: var(--text-2); line-height: 1.75; }
   border-color: rgba(13, 148, 136, 0.22);
 }
 
+.role-tag-green {
+  color: #15803d;
+  background: rgba(21, 128, 61, 0.07);
+  border-color: rgba(21, 128, 61, 0.22);
+}
+
 
 /* Bullet highlights */
 .hero-bullets {
@@ -296,6 +302,16 @@ p { color: var(--text-2); line-height: 1.75; }
   margin-top: 2px;
   color: var(--accent);
 }
+
+.inline-link {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.inline-link:hover { color: #c2410c; }
 
 /* Buttons */
 .hero-actions {
@@ -353,6 +369,16 @@ p { color: var(--text-2); line-height: 1.75; }
 .btn-linkedin:hover {
   background: #004182;
   box-shadow: 0 0 0 1px #004182, 0 8px 28px rgba(10,102,194,0.42);
+}
+
+.btn-project {
+  background: #15803d;
+  color: #fff;
+  box-shadow: 0 0 0 1px #15803d, 0 4px 18px rgba(21, 128, 61, 0.24);
+}
+.btn-project:hover {
+  background: #166534;
+  box-shadow: 0 0 0 1px #166534, 0 8px 28px rgba(21, 128, 61, 0.36);
 }
 
 /* Meta row */
