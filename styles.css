@@ -360,7 +360,7 @@ p { color: var(--text-2); line-height: 1.75; }
   align-items: center;
   gap: 0.28rem;
   margin-inline: 0.08rem;
-  vertical-align: -0.22em;
+  vertical-align: -0.04em;
 }
 
 .inline-project-link:hover .project-title {
@@ -381,6 +381,7 @@ p { color: var(--text-2); line-height: 1.75; }
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.04em;
+  transform: translateY(-0.02em);
 }
 
 .project-title {
