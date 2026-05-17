@@ -47,6 +47,8 @@ git clone https://github.com/Duclevn/ducleaboutme.git /opt/ducle.uk
 
 ### 4. Add the Nginx site config
 
+The checked-in Nginx config expects the Let's Encrypt certificate to already exist. For a first-time deployment, get the certificate first with Certbot's temporary Nginx edits, then copy the repo config afterward.
+
 Copy the config from the repo:
 
 ```bash
@@ -74,6 +76,14 @@ sudo certbot --nginx -d ducle.uk -d www.ducle.uk
 ```
 
 Choose the redirect option when Certbot asks whether HTTP should redirect to HTTPS.
+After Certbot succeeds, copy the repo config again and reload Nginx so `www.ducle.uk` and `/index.html` redirect to the canonical homepage:
+
+```bash
+sudo cp /opt/ducle.uk/deploy/nginx/ducle.uk.conf /etc/nginx/sites-available/ducle.uk
+sudo rm -f /etc/nginx/sites-enabled/default
+sudo nginx -t
+sudo systemctl reload nginx
+```
 
 ### 6. Verify the deployment
 
